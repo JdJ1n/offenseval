@@ -34,8 +34,8 @@ class Vectorizer:
                 model = Word2Vec.load("./embeddings/word2vec.model")
         else:
             model = Word2Vec(self.data,**self.params)
-        vectorizer = model.wv
-        self.vocab_length = len(model.wv.vocab)
+        vectorizer = model.vectors
+        self.vocab_length = len(model.vectors)
         vectors = [
             np.array([vectorizer[word] for word in tweet  if word in model]).flatten() for tweet in tqdm(self.data,'Vectorizing')
             ]
@@ -100,9 +100,9 @@ class Vectorizer:
         else:
             print('\nLoading Glove Embeddings from api...')
             model = api.load('glove-twitter-100')
-        vectorizer = model.wv
+        vectorizer = model.vectors
         vectors = [np.array([vectorizer[word] for word in tweet if word in model]).flatten() for tweet in tqdm(self.data,'Vectorizing')]
-        self.vocab_length = len(model.wv.vocab)
+        self.vocab_length = len(model.vectors)
         if not self.max_len:
             self.max_len = np.max([len(vector) for vector in vectors])
         self.vectors = [
@@ -127,8 +127,8 @@ class Vectorizer:
                 model = Word2Vec.load("./embeddings/fasttext.model")
         else:
             model = FastText(self.data,**self.params)
-        vectorizer = model.wv
-        self.vocab_length = len(model.wv.vocab)
+        vectorizer = model.vectors
+        self.vocab_length = len(model.vectors)
         vectors = [
             np.array([vectorizer[word] for word in tweet if word in model]).flatten() for tweet in tqdm(self.data,'Vectorizing')
             ]
