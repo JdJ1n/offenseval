@@ -26,7 +26,7 @@ class Vectorizer:
                 print('\nTraining Word2Vec model...')
                 model = self.train_w2v()
             elif self.extend_training and 'word2vec.model' in listdir('./embeddings'):
-            print('\nExtending existing Word2Vec model...')
+                print('\nExtending existing Word2Vec model...')
                 model = Word2Vec.load("./embeddings/word2vec.model")
                 model.train(self.data, total_examples=len(self.data), epochs=5000)
                 model.save("./embeddings/word2vec.model")
@@ -100,9 +100,7 @@ class Vectorizer:
         self.vocab_length = len(model)
         if not self.max_len:
             self.max_len = np.max([len(vector) for vector in vectors])
-        self.vectors = [
-            np.array(vector.tolist()+[0 for _ in range(self.max_len-len(vector))]) for vector in tqdm(vectors,'Finalizing')
-            ]
+        self.vectors = [np.array(vector.tolist()+[0 for _ in range(self.max_len-len(vector))]) for vector in tqdm(vectors,'Finalizing')]
         for i,vec in enumerate(self.vectors):
             self.vectors[i] = vec[:self.max_len]
         return self.vectors
