@@ -19,7 +19,7 @@ class Classifier:
     
     def __init__(self,type,params={}):
         __classifers__ = {
-        'Dummy': DummyClassifier
+        'Dummy': DummyClassifier,
         'KNN': KNeighborsClassifier,
         'M-NaiveBayes': MultinomialNB,
         'G-NaiveBayes':GaussianNB,
