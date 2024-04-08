@@ -15,7 +15,7 @@ class DataReader:
         with open(self.file_path,encoding='utf8') as tsvfile:
             reader = csv.reader(tsvfile, delimiter='\t')
             for i,line in enumerate(tqdm(reader,'Reading Data')):
-                if i is 0:
+                if i == 0:
                     continue
                 label = self.str_to_label(line[-3:])
                 if  self.sub_task:
@@ -31,7 +31,7 @@ class DataReader:
         with open(self.file_path,encoding='utf8') as tsvfile:
             reader = csv.reader(tsvfile, delimiter='\t')
             for i,line in enumerate(tqdm(reader,'Reading Test Data')):
-                if i is 0:
+                if i == 0:
                     continue
                 ids.append(line[0])
                 data.append(line[1])
