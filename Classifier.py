@@ -18,11 +18,16 @@ class Classifier:
     
     def __init__(self,type,params={}):
         __classifers__ = {
+        'KNN': KNeighborsClassifier,
         'M-NaiveBayes': MultinomialNB,
+        'G-NaiveBayes':GaussianNB,
+        'SVC': SVC,
         'DecisionTree': DecisionTreeClassifier,
         'RandomForest': RandomForestClassifier,
-        'SVC': SVC,
-        'MLP': MLPClassifier
+        'LogisticRegression': LogisticRegression,
+        'MLP': MLPClassifier,
+        'AdaBoost': AdaBoostClassifier,
+        'Bagging': BaggingClassifier
         }
         if type not in __classifers__.keys():
             raise Exception('Available Classifiers: ',__classifers__.keys())
