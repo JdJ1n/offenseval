@@ -35,7 +35,7 @@ class Classifier:
             raise Exception('Available Classifiers: ',__classifers__.keys())
         self.classifier = __classifers__[type]
         self.params = params
-        self.model = self.classifier(**self.params)   
+        self.model = self.classifier(**self.params)
 
     def fit(self,tr_data,tr_labels):
         return self.model.fit(tr_data,tr_labels)
