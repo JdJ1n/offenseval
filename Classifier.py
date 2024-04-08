@@ -11,6 +11,7 @@ from sklearn.naive_bayes import MultinomialNB, GaussianNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import GridSearchCV
+from sklearn.dummy import DummyClassifier
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -18,6 +19,7 @@ class Classifier:
     
     def __init__(self,type,params={}):
         __classifers__ = {
+        'Dummy': DummyClassifier
         'KNN': KNeighborsClassifier,
         'M-NaiveBayes': MultinomialNB,
         'G-NaiveBayes':GaussianNB,
