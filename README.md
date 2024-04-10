@@ -1,26 +1,24 @@
 # Offenseval
-SemEval 2019 - Task 6 - Identifying and Categorizing Offensive Language in Social Media 
+Based on SemEval 2019 - Task 6 - Identifying and Categorizing Offensive Language in Social Media by ZeyadZanaty
 
 ## Descrption
-A system to classifiy a tweet as either offensive or not offensive (Sub-task A) and further classifies offensive tweets into categories (Sub-tasks B – C). Some sort of grid search approach is taken where multiple techniques for preprocessing, feature extraction and classification are implemented and combinations of them all are tried to achieve the best model for the given dataset.
+A system to classifiy a tweet as either offensive or not offensive (Sub-task A). Some sort of grid search approach is taken where multiple techniques for preprocessing, feature extraction and classification are implemented and combinations of them all are tried to achieve the best model for the given dataset.
 
 ## Subtasks
 - Sub-task A - Offensive language identification;  [Offensive: OFF, Not Offensive: NOT]
-- Sub-task B - Automatic categorization of offense types; [Targted: TIN, Untargeted: UNT]
-- Sub-task C: Offense target identification. [Individual: IND, Group: GRP, Other: OTH]
 
 ## Implementation
 
 ### Preprocessing
-Tokenization, Stopwords Removal, Lemmatizaion, Stemming
+Tokenization, Stopwords Removal, Stemming
 
 ### Vectorization
 TFIDF, Count, Word2Vec, GloVe, fastText
 
 ### Classification
-KNN, Naïve Bayes, SVM, Decision Trees, Random Forest, Logistic Regression, MLP, Adaboost, Bagging
+Naïve Bayes, Decision Trees, Random Forest, SVM, MLP
 #### Deeplearning
-LSTM, 1-D CNN
+BERT, LSTM, 1-D CNN
 
 ## Running
 - Install requiremetns using `pip3 install -r requirements.txt`
